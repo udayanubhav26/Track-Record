@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body data-page="dashboard">
+
+<nav>
+  <a href="index.html">Setup</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="transactions.html">Transactions</a>
+  <a href="report.html">Monthly Report</a>
+</nav>
+
+<div class="container">
+
+  <h1 class="page-title">Dashboard</h1>
+  <p class="subtitle" id="dashboardMonthLabel"></p>
+
+  <div class="kpi">
+    <div class="kpi-box">
+      <div class="kpi-label">Income</div>
+      <div class="kpi-value" id="income">₹0</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-label">Expense</div>
+      <div class="kpi-value" id="expense">₹0</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-label">Balance</div>
+      <div class="kpi-value" id="balance">₹0</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-label">Savings Target</div>
+      <div class="kpi-value" id="savingsTarget">₹0</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Income vs Expense</h2>
+    <div class="chart-wrap">
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

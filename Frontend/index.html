@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker </title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+
+<div id="splash">
+  <div class="loader-box">
+    <img src="favicon.ico" class="logo" />
+    <div class="spinner"></div>
+    <h2>TRACK RECORD</h2>
+  </div>
+</div>
+<body data-page="setup">
+  <nav>
+  <a href="index.html">Setup</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="transactions.html">Transactions</a>
+  <a href="report.html">Monthly Report</a>
+</nav>
+
+ <label>Select Month</label>
+<select id="setupMonth"></select>
+
+<input id="salary" placeholder="Salary">
+<input id="savings" placeholder="Savings %">
+<input id="emi" placeholder="EMI">
+
+<button onclick="saveSetup()">Save Setup</button> 
+
+
+<div class="container">
+
+  <h1 class="page-title">Track Record</h1>
+  <p class="subtitle">Set your monthly salary, savings percentage, and EMI before starting.</p>
+
+ 
+
+  <div class="card">
+    <h2>Budget Preview</h2>
+    <div id="setupPreview"></div>
+  </div>
+
+</div>
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("splash").style.display = "none";
+    }, 3000); // 2 seconds delay
+  });
+</script>
+
+<script src="app.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

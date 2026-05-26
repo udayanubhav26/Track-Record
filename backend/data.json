@@ -1,0 +1,26 @@
+{
+  "setup": {
+    "salary": 450000,
+    "savingsPercent": 20,
+    "emiAmount": 5000
+  },
+  "categories": [
+    "Food",
+    "Study",
+    "EMI",
+    "Transport",
+    "Health",
+    "Entertainment",
+    "Others"
+  ],
+  "transactions": [
+    {
+      "id": 1779768816814,
+      "title": "Kuch bhi",
+      "amount": 10000,
+      "type": "expense",
+      "category": "Others",
+      "date": "2026-05-26"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yearly Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: white;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    canvas {
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>📊 Yearly Analysis</h1>
+
+<div class="card">
+  <canvas id="yearChart"></canvas>
+</div>
+
+<script>
+async function load() {
+  let res = await fetch("/api/data");
+  let data = await res.json();
+
+  let monthly = Array(12).fill(0);
+
+  data.transactions.forEach(t => {
+    let month = new Date().getMonth();
+    monthly[month] += t.amount;
+  });
+
+  new Chart(document.getElementById("yearChart"), {
+    type: "line",
+    data: {
+      labels: [
+        "Jan","Feb","Mar","Apr","May","Jun",
+        "Jul","Aug","Sep","Oct","Nov","Dec"
+      ],
+      datasets: [{
+        label: "Expenses",
+        data: monthly,
+        borderColor: "blue"
+      }]
+    }
+  });
+}
+
+load();
+</script>
+
+</body>
+</html>
