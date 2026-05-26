@@ -21,7 +21,7 @@ const DEFAULT_DATA = {
 app.use(express.json());
 
 app.use(cors({
-  origin: "https://your-frontend-url.vercel.app"
+  origin: "https://track-record-three.vercel.app"
 }));
 
 function normalizeData(data = {}) {
