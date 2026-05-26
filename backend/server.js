@@ -19,9 +19,7 @@ const DEFAULT_DATA = {
 };
 
 app.use(express.json());
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/index.html"));
-});
+
 app.use(cors({
   origin: "https://your-frontend-url.vercel.app"
 }));
