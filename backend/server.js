@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
 const PORT = 5000;
@@ -18,7 +19,12 @@ const DEFAULT_DATA = {
 };
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../frontend")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
+app.use(cors({
+  origin: "https://your-frontend-url.vercel.app"
+}));
 
 function normalizeData(data = {}) {
   return {
