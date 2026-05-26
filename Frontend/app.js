@@ -1,4 +1,4 @@
-const API = "/api";
+const API = "https://track-record.onrender.com/api";
 
 let dashboardChart = null;
 let reportSummaryChart = null;
